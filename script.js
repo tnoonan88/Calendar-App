@@ -3,7 +3,6 @@ var currentDayEl = document.getElementById('currentDay');
 var today = moment().format('dddd, MMMM do');
 var currentTime = moment().format('H');
 
-
 var planSchedule = [
     { time: "9 AM", military: 9, event: "" },
     { time: "10 AM", military: 10, event: "" },
@@ -36,9 +35,14 @@ planSchedule.forEach(function(timeSlot, index) {
     var blockColor = colorRow(timeSlot.military);
     var row = 
     `<div class="time-slot" id="${index}">
-    <div class="row no-gutters input-group"><div class="col-sm col-lg-1 input-group-prepend hour justify-content-sm-end pr-3 pt-3">${timeLabel}</div>
+    <div class="row no-gutters input-group">
+    <div class="col-sm col-lg-1 input-group-prepend hour justify-content-sm-end pr-3 pt-3">${timeLabel}</div>
     <textarea class="form-control ${blockColor} ">${timeSlot.event}</textarea>
-    <div class="col-sm col-lg-1 input-group-append"><button class="saveBtn btn-block" type="submit"><i class="fas fa-save"></i></button></div></div></div>`;
+    <div class="col-sm col-lg-1 input-group-append">
+    <button class="saveBtn btn-block" type="submit"><i class="fas fa-save"></i></button>
+    </div>
+    </div>
+    </div>`;
 
     $('#planner').append(row);
 });
