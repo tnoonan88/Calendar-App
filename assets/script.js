@@ -47,17 +47,13 @@ planSchedule.forEach(function(timeSlot, index) {
 
 $('.saveBtn').on('click', function() {
 	var blockID = parseInt(
-		$(this)
-			.closest('.time-slot')
-			.attr('id')
+		$(this).closest('.time-slot').attr('id')
 	);
 	var userEntry = $.trim(
-		$(this)
-			.parent()
-			.siblings('textarea')
-			.val()
+		$(this).parent().siblings('textarea').val()
 	);
-	planSchedule[blockID].event = userEntry;
+	
+    planSchedule[blockID].event = userEntry;
     console.log(userEntry)
 
 	localStorage.setItem('schedule', JSON.stringify(planSchedule));
