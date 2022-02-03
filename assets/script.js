@@ -10,7 +10,7 @@ var planSchedule = [
     { time: '3 PM', military: 15, event: '' },
     { time: '4 PM', military: 16, event: '' },
     { time: '5 PM', military: 17, event: '' },
-  ];
+];
 
 var workEvents = JSON.parse(localStorage.getItem('schedule'));
     if (workEvents) {
@@ -31,7 +31,7 @@ var rowColor = function(timeSlot) {
     else {
     return 'present'
     }
-}
+};
 planSchedule.forEach(function(timeSlot, index) {
     var timeLabel = timeSlot.time;
     var blockColor = rowColor(timeSlot.military);
